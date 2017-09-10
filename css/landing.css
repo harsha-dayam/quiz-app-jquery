@@ -1,0 +1,65 @@
+h1{
+  font-size:753%;
+  font-family: 'Gruppo', cursive;
+  color:black;
+  text-shadow: 2px 2px 6px rgba(10, 10, 10, 0.88);
+}
+h2{
+  font-family: 'Gruppo', cursive;
+  font-size:303%;
+  font-weight: 600;
+}
+.bg-image {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-image:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background: url(../images/bg-image1.jpg) center center;
+  opacity: .3;
+}
+/*.bg-image1 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-image1:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background: url(images/bg-imag.jpg) center center;
+  opacity: .3;
+}*/
+.navbar{
+  margin-bottom: 0;
+}
+.img-logo{
+  width:20%;
+  float:left;
+}
+.logo{
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+}
+.header{
+  position: relative;
+  bottom: 45px;
+  left: 80px;
+}
+.p-image{
+  margin:auto;
+  margin-top: 10%;
+  padding:auto;
+  border-radius: 50%;
+}

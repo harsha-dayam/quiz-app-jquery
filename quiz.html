@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html;UTF-8">
+  <title>Quiz</title>
+  <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">  
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand">Quiz</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id="saveExit"><span class="glyphicon glyphicon-new-window"></span> Exit</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-md-3 logo" onclick="location.href = 'index.html'">
+        <img src="images/bulb.svg" class="img-responsive" alt="App Logo">
+      </div>
+      <div class="col-xs-8 col-md-6 text-center">
+        <h1 id="topic">Topic</h1>
+      </div>
+      <div class="col-xs-12 col-md-3 text-center">
+        <p id="time"></p>
+        <canvas id="canvas" width="215" height="215"></canvas>
+      </div>
+    </div>
+    <div id="question" class="jumbotron">
+      <div class="well">
+       <h2 class="text-center">Question</h2>
+     </div>
+     <div class="row">
+      <div class="col-sm-6">
+        <p class="text-center"><label class="btn btn-default btn-lg"><input type="radio" value="A" name="options">A</label></p>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-center"><label class="btn btn-default btn-lg"><input type="radio" value="B" name="options">B</label></p>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-center"><label class="btn btn-default btn-lg"><input type="radio" value="C" name="options">C</label></p>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-center"><label class="btn btn-default btn-lg"><input type="radio" value="D" name="options">D</label></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+   <div class="col-xs-4 text-center">
+     <button id="skip" class="btn btn-danger btn-lg pull-right" role="button" ><span class="glyphicon glyphicon-step-forward"></span> Skip</button>
+   </div>
+   <div class="col-xs-4 text-center">
+     <button id="previous" class="btn btn-primary btn-lg text-center" href="#" role="button" ><span class="glyphicon glyphicon-backward"></span> Previous</button>
+   </div>
+   <div class="col-xs-4 text-center next">
+     <button id="next" class="btn btn-success btn-lg pull-left" href="#" role="button"><span class="glyphicon glyphicon-forward"></span> Next</button>
+   </div>
+   <div class="col-xs-4">
+     <button id="submit" class="btn btn-success btn-lg pull-left validateAns" href="#" role="button"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+   </div>
+ </div>
+
+ <!-- Bottom Modal -->
+ <div id="myModal" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <!-- <span class="close">&times;</span> -->
+      <h3>Modal Header</h3>
+    </div>
+    <div class="modal-body1 text-center">
+      <p>Some text in the Modal Body</p>
+    </div>
+    <div class="modal-footer1">
+      <button class="btn btn-danger btn-lg" onclick="location.href ='index.html'"><span class="glyphicon glyphicon-home"></span> Home</button>
+      <button class="btn btn-primary btn-lg" onclick="history.go(0)"><span class="glyphicon glyphicon-repeat"></span> Try Again</button>
+      <button class="btn btn-success btn-lg" id="nextTop"><span class="glyphicon glyphicon-forward"></span> Next Topic</button>
+    </div>
+  </div>
+</div>
+<!-- Top Modal -->
+<div class="modal modal-backdrop" tabindex="-1" id="topModal" role="dialog" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center">Time Up!</h3>
+      </div>
+      <div class="modal-body text-center">
+        <button type="button" class="btn btn-primary btn-lg btn-block validateAns">View Result</button>
+      </div>     
+    </div>
+  </div>
+</div>
+<!-- Audio  -->
+<audio id="audio-win" loop><source src="audio/applause.mp3" type="audio/mpeg"></audio>
+<audio id="audio-lose" loop><source src="audio/lose.mp3" type="audio/mpeg"></audio>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/quiz.js"></script>
+</body>
+</html>
